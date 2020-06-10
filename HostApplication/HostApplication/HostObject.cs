@@ -8,9 +8,11 @@ namespace HostApplication
 {
     class HostObject : MarshalByRefObject, RemotingObjects.IRemoteObject
     {
+        private int c = 0;
         public String sayHello (String name)
         {
-            return "Hello" + name;
+            c++;
+            return "Hello " + name + " number of invokation :" + c.ToString();
         }
     }
 }
